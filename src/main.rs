@@ -1,6 +1,5 @@
 // RANDOM STRING GENERATOR AND SLICER (by chunks)
 // Some codes are from the Rust cookbook (Create random passwords from a set of user-defined characters)
-
 use rand::Rng;
 
 fn main() {
@@ -30,10 +29,11 @@ fn main() {
         .collect();
 
     // Print result
-    println!("\nInitial code:\n\n\t[ {} ]\n", passcode);
+    println!("\nInitial code:\n\t[ {} ]\n", passcode.to_string());
     println!(
-        "Sliced code: (by {} chunks)\n\n\t[ {} ]",
+        "Sliced code: (by {} chunks)\n\t[ {} ] => {}",
         CHUNK_SIZE.to_string(),
-        chunks.join(" - ")
+        chunks.join(" - "),
+        chunks.len().to_string()
     );
 }
